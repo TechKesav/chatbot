@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Widget</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Link to CSS file -->
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}"> <!-- Add favicon -->
+</head>
+<body>
+    <!-- Chat Icon -->
+    <div id="chat-icon" class="chat-icon" onclick="toggleChat()">
+        <img src="{% static 'images/chatbox-icon.svg' %}">
+    </div>
+
+    <!-- Chat Window -->
+    <div id="chat-window" class="chat-window" style="display: none;">
+        <div class="chat-header">
+            <h2>Chatbot</h2>
+            <span class="close" onclick="toggleChat()">✖</span>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <input type="text" id="message" placeholder="Type your message..." onkeydown="if(event.key === 'Enter'){sendMessage()}">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+   <script src="{% static 'js/scripts.js' %}"></script> 
+    <!-- At the bottom of the body -->
+<!-- Link to JavaScript file -->
+</body>
+</html>
